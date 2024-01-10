@@ -55,9 +55,33 @@ class Ninja:
     else:
       print(f"{self.pet.name} is already clean.")
     return self
+  
+class Aquatic (Pet):
+  def __init__(self, name, type, tricks, sound, aqua_eco, health=100, energy=50):
+    super().__init__(name, type, tricks, sound, health=100, energy=50)
+    self.aqua_eco = aqua_eco
+  def play(self):
+    super().play()
+    print(f"Swimming in the {self.aqua_eco}")
+
+class Land (Pet):
+  def __init__(self, name, type, tricks, sound, land_eco, health=100, energy=50):
+    super().__init__(name, type, tricks, sound, health=100, energy=50)
+    self.land_eco = land_eco
+  def play(self):
+    super().play()
+    print("Walking on the ground.")
 
 rango = Pet("Rango", "Chameleon", "Camouflage", "Hiss", 100, 30)
 
 jacob = Ninja("Jacob", "Harris", rango, "Crickets", "Insects")
 
 jacob.walk().feed(3).bathe()
+
+nemo = Aquatic("Nemo", "Clownfish", "Spin", "Blub Blub", "Sea", "Algae")
+
+dumbo = Land("Dumbo", "Elephant", "Stomp", "Trumpet", "Safari", "Leaves")
+
+nemo.play()
+
+dumbo.play()
