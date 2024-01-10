@@ -38,12 +38,12 @@ class Ninja:
   
   def walk(self):
     self.pet.play()
-    print(f"{self.first_name} took their pet {self.pet} for a walk.")
+    print(f"{self.first_name} took their pet {self.pet.name} for a walk.")
     return self
   
   def feed(self, number_of_food=1):
     self.pet.eat()
-    print(f"{self.first_name} fed their pet {self.pet} {number_of_food} {self.treats}.")
+    print(f"{self.first_name} fed their pet {self.pet.name} {number_of_food} {self.treats}.")
     return self
   
   def bathe(self, is_dirty=False):
@@ -53,11 +53,11 @@ class Ninja:
       self.pet.noise()
       print(f"{self.first_name} gave their pet {self.pet.name} a bath.")
     else:
-      print(f"{self.pet} is already clean.")
+      print(f"{self.pet.name} is already clean.")
     return self
 
 rango = Pet("Rango", "Chameleon", "Camouflage", "Hiss", 100, 30)
 
 jacob = Ninja("Jacob", "Harris", rango, "Crickets", "Insects")
 
-jacob.walk().feed().bathe()
+jacob.walk().feed(3).bathe()
